@@ -1137,6 +1137,7 @@ class UserServicesRpc_Stub : public UserServicesRpc {
   void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::testProto::LoginRequest* request,
                        ::testProto::LoginResponse* response,
+                       ::google::protobuf::Closure* done);
   void getFriendList(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                        const ::testProto::getFriendListRequest* request,
                        ::testProto::getFriendListResponse* response,
