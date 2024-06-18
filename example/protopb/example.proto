@@ -1,0 +1,68 @@
+syntax="proto3";
+package example;
+
+
+//打开下列option,表示编译时生成service服务类和rpc方法描述
+option cc_generic_services= true;
+
+//定义登陆请求消息类型
+
+message errorInfo{
+
+enum errorCode{
+    NOERROR=0;
+    PASSWORDINCORECT=1;
+    NOSUCHUSERID=2;
+};
+
+errorCode errcode=1;
+bytes errmsg=2;
+
+}
+
+message user{
+
+    enum SEX {
+        MAN=0;
+        WOMAN=1;
+    };
+
+bytes name=1;
+int32 age=2;
+SEX sex=3;
+
+
+}
+
+message LoginRequest{
+
+string name=1;
+string pwd=2;
+
+}
+
+
+message LoginResponse{
+
+    errorInfo errinfo=1;
+    bool success=2;
+
+}
+
+message getFriendListRequest{
+    int32 userId=1;
+
+}
+
+message getFriendListResponse{
+    errorInfo errInfo=1;
+    repeated user friendList=2;
+
+}
+
+service UserServicesRpc{
+    
+    rpc Login(LoginRequest) returns(LoginResponse);
+    rpc getFriendList(getFriendListRequest) returns (getFriendListResponse);
+
+}
