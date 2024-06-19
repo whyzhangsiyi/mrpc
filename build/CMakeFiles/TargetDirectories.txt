@@ -1,0 +1,12 @@
+/home/ziggy/repositories/mrpc/build/CMakeFiles/rebuild_cache.dir
+/home/ziggy/repositories/mrpc/build/CMakeFiles/edit_cache.dir
+/home/ziggy/repositories/mrpc/build/src/CMakeFiles/rebuild_cache.dir
+/home/ziggy/repositories/mrpc/build/src/CMakeFiles/mrpc.dir
+/home/ziggy/repositories/mrpc/build/src/CMakeFiles/edit_cache.dir
+/home/ziggy/repositories/mrpc/build/example/CMakeFiles/rebuild_cache.dir
+/home/ziggy/repositories/mrpc/build/example/CMakeFiles/edit_cache.dir
+/home/ziggy/repositories/mrpc/build/example/callee/CMakeFiles/rebuild_cache.dir
+/home/ziggy/repositories/mrpc/build/example/callee/CMakeFiles/rpcProvider.dir
+/home/ziggy/repositories/mrpc/build/example/callee/CMakeFiles/edit_cache.dir
+/home/ziggy/repositories/mrpc/build/example/caller/CMakeFiles/rebuild_cache.dir
+/home/ziggy/repositories/mrpc/build/example/caller/CMakeFiles/edit_cache.dir

@@ -1,0 +1,11 @@
+# ninja log v5
+0	58	1718763539	src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o	abf2fa2d7c11c55e
+0	369	1718763539	src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o	ec1571ca5530bc26
+370	459	1718763539	../lib/libmrpc.so	15dcf3cf8cb80e55
+1	910	1718763539	example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o	7c7f7514047b3b5b
+2	65	1718764046	src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o	abf2fa2d7c11c55e
+3	1034	1718764047	src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o	ec1571ca5530bc26
+1034	1248	1718764047	../lib/libmrpc.so	15dcf3cf8cb80e55
+3	1638	1718764047	example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o	7c7f7514047b3b5b
+65	1990	1718764048	example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o	57404eddf22fe77e
+1990	2098	1718764048	../bin/rpcProvider	f8853ea0c0611862

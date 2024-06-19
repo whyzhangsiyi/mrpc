@@ -7,8 +7,7 @@
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
       "includePath": [
-        "${workspaceFolder}/**",
-        "C:/additional/include/path/**"
+        "${workspaceFolder}/**"
       ],
       "args": [],
       "stopAtEntry": true,
