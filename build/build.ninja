@@ -74,21 +74,24 @@ build cmake_object_order_depends_target_mrpc: phony
 build src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o: CXX_COMPILER__mrpc ../src/mrpcApplication.cpp || cmake_object_order_depends_target_mrpc
   DEFINES = -Dmrpc_EXPORTS
   DEP_FILE = src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o.d
-  FLAGS = -fPIC   -std=gnu++11
+  FLAGS = -g -O0 -fPIC   -std=gnu++11
   INCLUDES = -I../src/include
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   OBJECT_FILE_DIR = src/CMakeFiles/mrpc.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/mrpc.dir/
-  TARGET_PDB = ../lib/libmrpc.pdb
+build src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o: CXX_COMPILER__mrpc ../src/mrpcConfig.cpp || cmake_object_order_depends_target_mrpc
+  DEFINES = -Dmrpc_EXPORTS
+  DEP_FILE = src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o.d
+  FLAGS = -g -O0 -fPIC   -std=gnu++11
+  INCLUDES = -I../src/include
+  OBJECT_DIR = src/CMakeFiles/mrpc.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/mrpc.dir
 build src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o: CXX_COMPILER__mrpc ../src/rpcProvider.cpp || cmake_object_order_depends_target_mrpc
   DEFINES = -Dmrpc_EXPORTS
   DEP_FILE = src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o.d
-  FLAGS = -fPIC   -std=gnu++11
+  FLAGS = -g -O0 -fPIC   -std=gnu++11
   INCLUDES = -I../src/include
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   OBJECT_FILE_DIR = src/CMakeFiles/mrpc.dir
-  TARGET_COMPILE_PDB = src/CMakeFiles/mrpc.dir/
-  TARGET_PDB = ../lib/libmrpc.pdb
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target mrpc
@@ -97,15 +100,15 @@ build src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o: CXX_COMPILER__mrpc ../src/rpcPr
 #############################################
 # Link the shared library ../lib/libmrpc.so
 
-build ../lib/libmrpc.so: CXX_SHARED_LIBRARY_LINKER__mrpc src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o
+build ../lib/libmrpc.so: CXX_SHARED_LIBRARY_LINKER__mrpc src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g -O0
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   POST_BUILD = :
   PRE_LINK = :
   SONAME = libmrpc.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_COMPILE_PDB = src/CMakeFiles/mrpc.dir/
   TARGET_FILE = ../lib/libmrpc.so
-  TARGET_PDB = ../lib/libmrpc.pdb
+  TARGET_PDB = mrpc.so.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -164,20 +167,16 @@ build example/callee/rebuild_cache: phony example/callee/CMakeFiles/rebuild_cach
 build cmake_object_order_depends_target_rpcProvider: phony || cmake_object_order_depends_target_mrpc
 build example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o: CXX_COMPILER__rpcProvider ../example/callee/main.cpp || cmake_object_order_depends_target_rpcProvider
   DEP_FILE = example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o.d
-  FLAGS = -std=gnu++11
+  FLAGS = -g   -std=gnu++11
   INCLUDES = -I../src/include -I../example/callee/../protopb
   OBJECT_DIR = example/callee/CMakeFiles/rpcProvider.dir
   OBJECT_FILE_DIR = example/callee/CMakeFiles/rpcProvider.dir
-  TARGET_COMPILE_PDB = example/callee/CMakeFiles/rpcProvider.dir/
-  TARGET_PDB = ../bin/rpcProvider.pdb
 build example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o: CXX_COMPILER__rpcProvider ../example/protopb/example.pb.cc || cmake_object_order_depends_target_rpcProvider
   DEP_FILE = example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o.d
-  FLAGS = -std=gnu++11
+  FLAGS = -g   -std=gnu++11
   INCLUDES = -I../src/include -I../example/callee/../protopb
   OBJECT_DIR = example/callee/CMakeFiles/rpcProvider.dir
   OBJECT_FILE_DIR = example/callee/CMakeFiles/rpcProvider.dir/__/protopb
-  TARGET_COMPILE_PDB = example/callee/CMakeFiles/rpcProvider.dir/
-  TARGET_PDB = ../bin/rpcProvider.pdb
 
 # =============================================================================
 # Link build statements for EXECUTABLE target rpcProvider
@@ -187,13 +186,13 @@ build example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o: CXX_
 # Link the executable ../bin/rpcProvider
 
 build ../bin/rpcProvider: CXX_EXECUTABLE_LINKER__rpcProvider example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o | ../lib/libmrpc.so || ../lib/libmrpc.so
+  FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/ziggy/repositories/mrpc/lib -lprotobuf ../lib/libmrpc.so
   OBJECT_DIR = example/callee/CMakeFiles/rpcProvider.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = example/callee/CMakeFiles/rpcProvider.dir/
   TARGET_FILE = ../bin/rpcProvider
-  TARGET_PDB = ../bin/rpcProvider.pdb
+  TARGET_PDB = rpcProvider.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -278,13 +277,13 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../example/CMakeLists.txt ../example/callee/CMakeLists.txt ../example/caller/CMakeLists.txt ../src/CMakeLists.txt /usr/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.10/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.10/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.10/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.10/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.10/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.10/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX-FeatureTests.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU.cmake /usr/share/cmake-3.10/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.10/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/MIPSpro-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.10/Modules/Platform/Linux.cmake /usr/share/cmake-3.10/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake CMakeFiles/feature_tests.cxx
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../example/CMakeLists.txt ../example/callee/CMakeLists.txt ../example/caller/CMakeLists.txt ../src/CMakeLists.txt /usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.10/Modules/Platform/Linux.cmake /usr/share/cmake-3.10/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake
   pool = console
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../example/CMakeLists.txt ../example/callee/CMakeLists.txt ../example/caller/CMakeLists.txt ../src/CMakeLists.txt /usr/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.10/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake /usr/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake /usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.10/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake-3.10/Modules/CMakeSystem.cmake.in /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake-3.10/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.10/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake-3.10/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX-FeatureTests.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU.cmake /usr/share/cmake-3.10/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake-3.10/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/MIPSpro-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.10/Modules/Platform/Linux.cmake /usr/share/cmake-3.10/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake CMakeFiles/feature_tests.cxx: phony
+build ../CMakeLists.txt ../example/CMakeLists.txt ../example/callee/CMakeLists.txt ../example/caller/CMakeLists.txt ../src/CMakeLists.txt /usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.10/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Compiler/GNU.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.10/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.10/Modules/Platform/Linux.cmake /usr/share/cmake-3.10/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake: phony
 
 #############################################
 # Clean all the built files.
