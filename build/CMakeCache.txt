@@ -157,8 +157,8 @@ mrpcFramework_BINARY_DIR:STATIC=/home/ziggy/repositories/mrpc/build
 //Value Computed by CMake
 mrpcFramework_SOURCE_DIR:STATIC=/home/ziggy/repositories/mrpc
 
-//Dependencies for target
-mrpc_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+mrpc_LIB_DEPENDS:STATIC=general;muduo_net;general;muduo_base;general;pthread;
 
 
 ########################

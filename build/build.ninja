@@ -64,7 +64,7 @@ build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 # =============================================================================
-# Object build statements for SHARED_LIBRARY target mrpc
+# Object build statements for STATIC_LIBRARY target mrpc
 
 
 #############################################
@@ -72,43 +72,38 @@ build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_mrpc: phony
 build src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o: CXX_COMPILER__mrpc ../src/mrpcApplication.cpp || cmake_object_order_depends_target_mrpc
-  DEFINES = -Dmrpc_EXPORTS
   DEP_FILE = src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o.d
-  FLAGS = -g -O0 -fPIC   -std=gnu++11
+  FLAGS = -g   -std=gnu++11
   INCLUDES = -I../src/include
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   OBJECT_FILE_DIR = src/CMakeFiles/mrpc.dir
 build src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o: CXX_COMPILER__mrpc ../src/mrpcConfig.cpp || cmake_object_order_depends_target_mrpc
-  DEFINES = -Dmrpc_EXPORTS
   DEP_FILE = src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o.d
-  FLAGS = -g -O0 -fPIC   -std=gnu++11
+  FLAGS = -g   -std=gnu++11
   INCLUDES = -I../src/include
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   OBJECT_FILE_DIR = src/CMakeFiles/mrpc.dir
 build src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o: CXX_COMPILER__mrpc ../src/rpcProvider.cpp || cmake_object_order_depends_target_mrpc
-  DEFINES = -Dmrpc_EXPORTS
   DEP_FILE = src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o.d
-  FLAGS = -g -O0 -fPIC   -std=gnu++11
+  FLAGS = -g   -std=gnu++11
   INCLUDES = -I../src/include
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   OBJECT_FILE_DIR = src/CMakeFiles/mrpc.dir
 
 # =============================================================================
-# Link build statements for SHARED_LIBRARY target mrpc
+# Link build statements for STATIC_LIBRARY target mrpc
 
 
 #############################################
-# Link the shared library ../lib/libmrpc.so
+# Link the static library ../lib/libmrpc.a
 
-build ../lib/libmrpc.so: CXX_SHARED_LIBRARY_LINKER__mrpc src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o
-  LANGUAGE_COMPILE_FLAGS = -g -O0
+build ../lib/libmrpc.a: CXX_STATIC_LIBRARY_LINKER__mrpc src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/CMakeFiles/mrpc.dir
   POST_BUILD = :
   PRE_LINK = :
-  SONAME = libmrpc.so
-  SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = ../lib/libmrpc.so
-  TARGET_PDB = mrpc.so.dbg
+  TARGET_FILE = ../lib/libmrpc.a
+  TARGET_PDB = mrpc.a.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -185,9 +180,9 @@ build example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o: CXX_
 #############################################
 # Link the executable ../bin/rpcProvider
 
-build ../bin/rpcProvider: CXX_EXECUTABLE_LINKER__rpcProvider example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o | ../lib/libmrpc.so || ../lib/libmrpc.so
+build ../bin/rpcProvider: CXX_EXECUTABLE_LINKER__rpcProvider example/callee/CMakeFiles/rpcProvider.dir/main.cpp.o example/callee/CMakeFiles/rpcProvider.dir/__/protopb/example.pb.cc.o | ../lib/libmrpc.a || ../lib/libmrpc.a
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/home/ziggy/repositories/mrpc/lib -lprotobuf ../lib/libmrpc.so
+  LINK_LIBRARIES = -lprotobuf ../lib/libmrpc.a -lmuduo_net -lmuduo_base -lpthread
   OBJECT_DIR = example/callee/CMakeFiles/rpcProvider.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -229,8 +224,8 @@ build example/caller/edit_cache: phony example/caller/CMakeFiles/edit_cache.util
 # =============================================================================
 # Target aliases.
 
-build libmrpc.so: phony ../lib/libmrpc.so
-build mrpc: phony ../lib/libmrpc.so
+build libmrpc.a: phony ../lib/libmrpc.a
+build mrpc: phony ../lib/libmrpc.a
 build rpcProvider: phony ../bin/rpcProvider
 # =============================================================================
 # Folder targets.
@@ -267,7 +262,7 @@ build  src/all: phony mrpc
 #############################################
 # The main all target.
 
-build all: phony ../lib/libmrpc.so ../bin/rpcProvider
+build all: phony ../lib/libmrpc.a ../bin/rpcProvider
 
 #############################################
 # Make the all target the default.

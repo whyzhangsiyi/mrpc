@@ -8,6 +8,7 @@ mrpcApplication *mrpcApplication::getMrpcApplicationInstance()
 void mrpcApplication::Init(int argc, char **argv)
 {
 
+  m_config.load(argc, argv);
   // 读取配置文件,为框架的初始化,配置和使用做工作
 }
 

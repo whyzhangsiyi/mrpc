@@ -1,7 +1,13 @@
 
 #pragma once
+#include "mrpcConfig.hpp"
+#include <string>
 class mrpcApplication
 {
+
+private:
+  mrpcConfig m_config;
+
 private:
   mrpcApplication();
   mrpcApplication(const mrpcApplication &) = delete;
@@ -10,7 +16,24 @@ private:
 public:
   ~mrpcApplication();
 
-  mrpcApplication *getMrpcApplicationInstance();
+  std::string getConfigItem(std::string key)
+  {
 
-  static void Init(int argc, char **argv);
+    return m_config.getConfigItem(key);
+  }
+
+  std::string getConfigInfoString()
+  {
+
+    return m_config.getConfigInfoString();
+  }
+
+  std::string getConfigFilePath()
+  {
+    return m_config.getConfigFilePath();
+  }
+
+  static mrpcApplication *getMrpcApplicationInstance();
+
+  void Init(int argc, char **argv);
 };

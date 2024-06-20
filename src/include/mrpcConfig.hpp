@@ -11,6 +11,7 @@ extern "C" char *optarg;
 
 class mrpcConfig
 {
+
 private:
   std::string m_configFilePath;
   std::unordered_map<std::string, std::string> m_configItems;
