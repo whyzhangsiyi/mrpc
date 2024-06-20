@@ -18,6 +18,7 @@ int main(int argc, char **argv)
     // provider 是rpc服务提供者,把远程函数发布在rpc节点上
     rpcProvider provider;
     provider.NotifyService(new UserServices);
+    provider.printServceInfo();
     provider.run();
 
     return 0;

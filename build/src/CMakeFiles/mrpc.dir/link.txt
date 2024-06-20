@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libmrpc.a  CMakeFiles/mrpc.dir/mrpcApplication.cpp.o CMakeFiles/mrpc.dir/mrpcConfig.cpp.o CMakeFiles/mrpc.dir/rpcProvider.cpp.o
+/usr/bin/ranlib ../../lib/libmrpc.a

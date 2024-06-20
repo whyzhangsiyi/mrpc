@@ -2,7 +2,24 @@
 
 // 启动rpc节点,开始提供rpc服务
 
-void rpcProvider::NotifyService(::PROTOBUF_NAMESPACE_ID::Service *) {}
+void rpcProvider::NotifyService(::PROTOBUF_NAMESPACE_ID::Service *service)
+{
+
+  serviceInfo serviceinfo;
+  serviceinfo.m_servicePtr = service;
+
+  const ::google::protobuf::ServiceDescriptor *s_desc = service->GetDescriptor();
+  serviceinfo.m_serviceName = s_desc->name();
+  int methodcnt = s_desc->method_count(); // 该方法返回该service类内定义的(远程)方法的个数
+
+  for (size_t i = 0; i < methodcnt; i++)
+  {
+    const ::google::protobuf::MethodDescriptor *m_desc = s_desc->method(i); // 描述符必须为const,不然可能造成映射信息错误
+    serviceinfo.m_methodMaps.insert({m_desc->name(), m_desc});
+  }
+
+  m_servicesMaps.insert({s_desc->name(), serviceinfo});
+}
 
 void rpcProvider ::run()
 {
