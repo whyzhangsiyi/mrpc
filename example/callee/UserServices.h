@@ -31,7 +31,7 @@ public:
     //*     3.再封装响应(LoginResponse)
     //*     4.最后给框架发射done信号通知框架本地方法调用完成,给caller返回结果 (通过网络)
 
-    void Login(::google::protobuf::RpcController *controller,
+    void Login(::google::protobuf::RpcController *controller, // 真正被调用的rpc方法
                const ::example::LoginRequest *request,
                ::example::LoginResponse *response,
                ::google::protobuf::Closure *done) override

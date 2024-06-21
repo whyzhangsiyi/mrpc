@@ -1,0 +1,20 @@
+syntax="proto3";
+package  header;
+
+
+//打开下列option,表示编译时生成service服务类和rpc方法描述
+option cc_generic_services= true;
+
+message requestHeader{
+
+  int32 message_len=1;
+  bytes service_name=2;
+  bytes method_name=3;
+  bytes args=4;
+
+}
+
+
+
+
+

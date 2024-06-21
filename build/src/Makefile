@@ -179,6 +179,33 @@ mrpcConfig.cpp.s:
 	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.s
 .PHONY : mrpcConfig.cpp.s
 
+requestHeader.pb.o: requestHeader.pb.cc.o
+
+.PHONY : requestHeader.pb.o
+
+# target to build an object file
+requestHeader.pb.cc.o:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o
+.PHONY : requestHeader.pb.cc.o
+
+requestHeader.pb.i: requestHeader.pb.cc.i
+
+.PHONY : requestHeader.pb.i
+
+# target to preprocess a source file
+requestHeader.pb.cc.i:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.i
+.PHONY : requestHeader.pb.cc.i
+
+requestHeader.pb.s: requestHeader.pb.cc.s
+
+.PHONY : requestHeader.pb.s
+
+# target to generate assembly for a file
+requestHeader.pb.cc.s:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.s
+.PHONY : requestHeader.pb.cc.s
+
 rpcProvider.o: rpcProvider.cpp.o
 
 .PHONY : rpcProvider.o
@@ -221,6 +248,9 @@ help:
 	@echo "... mrpcConfig.o"
 	@echo "... mrpcConfig.i"
 	@echo "... mrpcConfig.s"
+	@echo "... requestHeader.pb.o"
+	@echo "... requestHeader.pb.i"
+	@echo "... requestHeader.pb.s"
 	@echo "... rpcProvider.o"
 	@echo "... rpcProvider.i"
 	@echo "... rpcProvider.s"
