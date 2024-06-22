@@ -37,16 +37,24 @@ void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net
 
   //* 反序列化请求头,获取远程调用的信息
   std::string rec_str = buffer->retrieveAllAsString();
+  std::cout << rec_str << std::endl;
   header::requestHeader headerinfo;
-  int headerLen;
-  rec_str.copy((char *)&headerLen, 4, 0);
 
-  if (!headerinfo.ParseFromString(rec_str.substr(0, headerLen))) // 序列化一个请求头对象
+  // 先不考虑粘包问题
+  //  int headerLen;
+  //  rec_str.copy((char *)&headerLen, 4, 0); // 读取头部的字节数,防止粘包,准确地序列化
+
+  if (!headerinfo.ParseFromString(rec_str)) // 序列化一个请求头对象
   {
     std::cout << "请求头对象序列化失败,rpc请求格式错误" << std::endl;
     conn->shutdown();
     return;
   }
+
+  // std::cout << headerLen;
+  std::cout << headerinfo.service_name() << std::endl;
+  std::cout << headerinfo.method_name() << std::endl;
+  std::cout << headerinfo.args() << std::endl;
 
   //* 查询远程调用是否存在,该远程调用是否正确
   auto s_it = m_servicesMaps.find(headerinfo.service_name());
@@ -77,7 +85,7 @@ void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net
   ::google::protobuf ::Message *request = _service->GetRequestPrototype(m_desc).New();   // 请求类型
   ::google::protobuf ::Message *response = _service->GetResponsePrototype(m_desc).New(); // 响应类型
 
-  if (request->ParseFromString(headerinfo.args())) // 反序列化请求
+  if (!request->ParseFromString(headerinfo.args())) // 反序列化请求
   {
 
     std::cout << "远程调用参数反序列化失败" << std::endl;

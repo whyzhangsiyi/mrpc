@@ -152,6 +152,33 @@ mrpcApplication.cpp.s:
 	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.s
 .PHONY : mrpcApplication.cpp.s
 
+mrpcChannel.o: mrpcChannel.cpp.o
+
+.PHONY : mrpcChannel.o
+
+# target to build an object file
+mrpcChannel.cpp.o:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o
+.PHONY : mrpcChannel.cpp.o
+
+mrpcChannel.i: mrpcChannel.cpp.i
+
+.PHONY : mrpcChannel.i
+
+# target to preprocess a source file
+mrpcChannel.cpp.i:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.i
+.PHONY : mrpcChannel.cpp.i
+
+mrpcChannel.s: mrpcChannel.cpp.s
+
+.PHONY : mrpcChannel.s
+
+# target to generate assembly for a file
+mrpcChannel.cpp.s:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.s
+.PHONY : mrpcChannel.cpp.s
+
 mrpcConfig.o: mrpcConfig.cpp.o
 
 .PHONY : mrpcConfig.o
@@ -245,6 +272,9 @@ help:
 	@echo "... mrpcApplication.o"
 	@echo "... mrpcApplication.i"
 	@echo "... mrpcApplication.s"
+	@echo "... mrpcChannel.o"
+	@echo "... mrpcChannel.i"
+	@echo "... mrpcChannel.s"
 	@echo "... mrpcConfig.o"
 	@echo "... mrpcConfig.i"
 	@echo "... mrpcConfig.s"

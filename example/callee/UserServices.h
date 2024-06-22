@@ -16,6 +16,7 @@ public:
     Login(std::string name, std::string password) // 本地的login方法,要发布成rpc方法
     {
         std::cout << "login called" << std::endl;
+        return true;
     }
 
     bool getFriendList(int32_t userid, std::vector<example::user> &friendlist)
@@ -55,6 +56,7 @@ public:
 
         done->Run();
     }
+
     void getFriendList(::google::protobuf::RpcController *controller,
                        const ::example::getFriendListRequest *request,
                        ::example::getFriendListResponse *response,

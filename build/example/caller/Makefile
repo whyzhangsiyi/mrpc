@@ -110,6 +110,75 @@ depend:
 	cd /home/ziggy/repositories/mrpc/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+example/caller/CMakeFiles/rpcCaller.dir/rule:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f CMakeFiles/Makefile2 example/caller/CMakeFiles/rpcCaller.dir/rule
+.PHONY : example/caller/CMakeFiles/rpcCaller.dir/rule
+
+# Convenience name for target.
+rpcCaller: example/caller/CMakeFiles/rpcCaller.dir/rule
+
+.PHONY : rpcCaller
+
+# fast build rule for target.
+rpcCaller/fast:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/build
+.PHONY : rpcCaller/fast
+
+__/protopb/example.pb.o: __/protopb/example.pb.cc.o
+
+.PHONY : __/protopb/example.pb.o
+
+# target to build an object file
+__/protopb/example.pb.cc.o:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/__/protopb/example.pb.cc.o
+.PHONY : __/protopb/example.pb.cc.o
+
+__/protopb/example.pb.i: __/protopb/example.pb.cc.i
+
+.PHONY : __/protopb/example.pb.i
+
+# target to preprocess a source file
+__/protopb/example.pb.cc.i:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/__/protopb/example.pb.cc.i
+.PHONY : __/protopb/example.pb.cc.i
+
+__/protopb/example.pb.s: __/protopb/example.pb.cc.s
+
+.PHONY : __/protopb/example.pb.s
+
+# target to generate assembly for a file
+__/protopb/example.pb.cc.s:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/__/protopb/example.pb.cc.s
+.PHONY : __/protopb/example.pb.cc.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/ziggy/repositories/mrpc/build && $(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -117,7 +186,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... rpcCaller"
 	@echo "... edit_cache"
+	@echo "... __/protopb/example.pb.o"
+	@echo "... __/protopb/example.pb.i"
+	@echo "... __/protopb/example.pb.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

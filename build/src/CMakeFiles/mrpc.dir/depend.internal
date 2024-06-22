@@ -5,6 +5,12 @@ src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o
  ../src/include/mrpcApplication.hpp
  ../src/include/mrpcConfig.hpp
  /home/ziggy/repositories/mrpc/src/mrpcApplication.cpp
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o
+ ../src/include/mrpcApplication.hpp
+ ../src/include/mrpcChannel.hpp
+ ../src/include/mrpcConfig.hpp
+ ../src/include/requestHeader.pb.h
+ /home/ziggy/repositories/mrpc/src/mrpcChannel.cpp
 src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o
  ../src/include/mrpcConfig.hpp
  /home/ziggy/repositories/mrpc/src/mrpcConfig.cpp

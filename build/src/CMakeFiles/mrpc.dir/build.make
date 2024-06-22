@@ -81,9 +81,33 @@ src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o.provides: src/CMakeFiles/mrpc.dir/
 src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o.provides.build: src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o
 
 
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o: src/CMakeFiles/mrpc.dir/flags.make
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o: ../src/mrpcChannel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o"
+	cd /home/ziggy/repositories/mrpc/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/mrpcChannel.cpp.o -c /home/ziggy/repositories/mrpc/src/mrpcChannel.cpp
+
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mrpc.dir/mrpcChannel.cpp.i"
+	cd /home/ziggy/repositories/mrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ziggy/repositories/mrpc/src/mrpcChannel.cpp > CMakeFiles/mrpc.dir/mrpcChannel.cpp.i
+
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mrpc.dir/mrpcChannel.cpp.s"
+	cd /home/ziggy/repositories/mrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ziggy/repositories/mrpc/src/mrpcChannel.cpp -o CMakeFiles/mrpc.dir/mrpcChannel.cpp.s
+
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.requires
+
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.provides: src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/mrpc.dir/build.make src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.provides.build
+.PHONY : src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.provides
+
+src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.provides.build: src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o
+
+
 src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o: ../src/mrpcConfig.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o"
 	cd /home/ziggy/repositories/mrpc/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/mrpcConfig.cpp.o -c /home/ziggy/repositories/mrpc/src/mrpcConfig.cpp
 
 src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.i: cmake_force
@@ -107,7 +131,7 @@ src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o.provides.build: src/CMakeFiles/mrpc.dir
 
 src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o: ../src/requestHeader.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o"
 	cd /home/ziggy/repositories/mrpc/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/requestHeader.pb.cc.o -c /home/ziggy/repositories/mrpc/src/requestHeader.pb.cc
 
 src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.i: cmake_force
@@ -131,7 +155,7 @@ src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o.provides.build: src/CMakeFiles/mrp
 
 src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o: src/CMakeFiles/mrpc.dir/flags.make
 src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o: ../src/rpcProvider.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o"
 	cd /home/ziggy/repositories/mrpc/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mrpc.dir/rpcProvider.cpp.o -c /home/ziggy/repositories/mrpc/src/rpcProvider.cpp
 
 src/CMakeFiles/mrpc.dir/rpcProvider.cpp.i: cmake_force
@@ -156,6 +180,7 @@ src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o.provides.build: src/CMakeFiles/mrpc.di
 # Object files for target mrpc
 mrpc_OBJECTS = \
 "CMakeFiles/mrpc.dir/mrpcApplication.cpp.o" \
+"CMakeFiles/mrpc.dir/mrpcChannel.cpp.o" \
 "CMakeFiles/mrpc.dir/mrpcConfig.cpp.o" \
 "CMakeFiles/mrpc.dir/requestHeader.pb.cc.o" \
 "CMakeFiles/mrpc.dir/rpcProvider.cpp.o"
@@ -164,12 +189,13 @@ mrpc_OBJECTS = \
 mrpc_EXTERNAL_OBJECTS =
 
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o
+../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/build.make
 ../lib/libmrpc.a: src/CMakeFiles/mrpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library ../../lib/libmrpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ziggy/repositories/mrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../lib/libmrpc.a"
 	cd /home/ziggy/repositories/mrpc/build/src && $(CMAKE_COMMAND) -P CMakeFiles/mrpc.dir/cmake_clean_target.cmake
 	cd /home/ziggy/repositories/mrpc/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mrpc.dir/link.txt --verbose=$(VERBOSE)
 
@@ -179,6 +205,7 @@ src/CMakeFiles/mrpc.dir/build: ../lib/libmrpc.a
 .PHONY : src/CMakeFiles/mrpc.dir/build
 
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/mrpcApplication.cpp.o.requires
+src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/mrpcChannel.cpp.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/mrpcConfig.cpp.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/requestHeader.pb.cc.o.requires
 src/CMakeFiles/mrpc.dir/requires: src/CMakeFiles/mrpc.dir/rpcProvider.cpp.o.requires

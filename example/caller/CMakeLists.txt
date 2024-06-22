@@ -1,4 +1,26 @@
 
 
-# set(SRC_LIST ${CMAKE_CURRENT_SOURCE_DIR})
-# add_executable(rpcClient SRC_LIST)
+
+set(CMAKE_BUILD_TYPE Debug)
+include_directories(${PROJECT_SOURCE_DIR}/src/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../protopb)
+
+
+#设置源文件列表
+aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} SOURCE_CODE_LIST)
+
+# 定义一个可执行文件及其源文件
+add_executable(rpcCaller ${SOURCE_CODE_LIST}  ${CMAKE_CURRENT_SOURCE_DIR}/../protopb/example.pb.cc)
+
+link_directories(/home/ziggy/repositories/mrpc/lib/libmrpc.so)
+
+link_directories(/usr/local/lib)
+                    
+target_link_libraries(rpcCaller  protobuf  mrpc)
+
+
+set_target_properties(rpcCaller PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib
+    LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib
+    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin
+)

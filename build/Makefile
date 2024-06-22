@@ -136,6 +136,19 @@ rpcProvider/fast:
 	$(MAKE) -f example/callee/CMakeFiles/rpcProvider.dir/build.make example/callee/CMakeFiles/rpcProvider.dir/build
 .PHONY : rpcProvider/fast
 
+#=============================================================================
+# Target rules for targets named rpcCaller
+
+# Build rule for target.
+rpcCaller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rpcCaller
+.PHONY : rpcCaller
+
+# fast build rule for target.
+rpcCaller/fast:
+	$(MAKE) -f example/caller/CMakeFiles/rpcCaller.dir/build.make example/caller/CMakeFiles/rpcCaller.dir/build
+.PHONY : rpcCaller/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +159,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... mrpc"
 	@echo "... rpcProvider"
+	@echo "... rpcCaller"
 .PHONY : help
 
 

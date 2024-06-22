@@ -8,11 +8,16 @@ mrpcApplication *mrpcApplication::getMrpcApplicationInstance()
 void mrpcApplication::Init(int argc, char **argv)
 {
 
-  m_config.load(argc, argv);
+  if (!_inited)
+  {
+    m_config.load(argc, argv);
+    _inited = true;
+  }
+
   // 读取配置文件,为框架的初始化,配置和使用做工作
 }
 
-mrpcApplication::mrpcApplication(/* args */)
+mrpcApplication::mrpcApplication(/* args */) : _inited(false)
 {
 }
 

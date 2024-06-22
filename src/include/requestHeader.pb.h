@@ -172,12 +172,11 @@ class requestHeader :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kServiceNameFieldNumber = 2,
-    kMethodNameFieldNumber = 3,
-    kArgsFieldNumber = 4,
-    kMessageLenFieldNumber = 1,
+    kServiceNameFieldNumber = 1,
+    kMethodNameFieldNumber = 2,
+    kArgsFieldNumber = 3,
   };
-  // bytes service_name = 2;
+  // bytes service_name = 1;
   void clear_service_name();
   const std::string& service_name() const;
   void set_service_name(const std::string& value);
@@ -193,7 +192,7 @@ class requestHeader :
   std::string* _internal_mutable_service_name();
   public:
 
-  // bytes method_name = 3;
+  // bytes method_name = 2;
   void clear_method_name();
   const std::string& method_name() const;
   void set_method_name(const std::string& value);
@@ -209,7 +208,7 @@ class requestHeader :
   std::string* _internal_mutable_method_name();
   public:
 
-  // bytes args = 4;
+  // bytes args = 3;
   void clear_args();
   const std::string& args() const;
   void set_args(const std::string& value);
@@ -225,15 +224,6 @@ class requestHeader :
   std::string* _internal_mutable_args();
   public:
 
-  // int32 message_len = 1;
-  void clear_message_len();
-  ::PROTOBUF_NAMESPACE_ID::int32 message_len() const;
-  void set_message_len(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_message_len() const;
-  void _internal_set_message_len(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:header.requestHeader)
  private:
   class _Internal;
@@ -242,7 +232,6 @@ class requestHeader :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr service_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr method_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr args_;
-  ::PROTOBUF_NAMESPACE_ID::int32 message_len_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_requestHeader_2eproto;
 };
@@ -257,27 +246,7 @@ class requestHeader :
 #endif  // __GNUC__
 // requestHeader
 
-// int32 message_len = 1;
-inline void requestHeader::clear_message_len() {
-  message_len_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 requestHeader::_internal_message_len() const {
-  return message_len_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 requestHeader::message_len() const {
-  // @@protoc_insertion_point(field_get:header.requestHeader.message_len)
-  return _internal_message_len();
-}
-inline void requestHeader::_internal_set_message_len(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  message_len_ = value;
-}
-inline void requestHeader::set_message_len(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_message_len(value);
-  // @@protoc_insertion_point(field_set:header.requestHeader.message_len)
-}
-
-// bytes service_name = 2;
+// bytes service_name = 1;
 inline void requestHeader::clear_service_name() {
   service_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -337,7 +306,7 @@ inline void requestHeader::set_allocated_service_name(std::string* service_name)
   // @@protoc_insertion_point(field_set_allocated:header.requestHeader.service_name)
 }
 
-// bytes method_name = 3;
+// bytes method_name = 2;
 inline void requestHeader::clear_method_name() {
   method_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -397,7 +366,7 @@ inline void requestHeader::set_allocated_method_name(std::string* method_name) {
   // @@protoc_insertion_point(field_set_allocated:header.requestHeader.method_name)
 }
 
-// bytes args = 4;
+// bytes args = 3;
 inline void requestHeader::clear_args() {
   args_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }

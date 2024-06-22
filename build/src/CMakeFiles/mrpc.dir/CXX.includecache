@@ -12,6 +12,20 @@ mrpcConfig.hpp
 string
 -
 
+../src/include/mrpcChannel.hpp
+google/protobuf/service.h
+../src/include/google/protobuf/service.h
+requestHeader.pb.h
+../src/include/requestHeader.pb.h
+muduo/net/TcpClient.h
+../src/include/muduo/net/TcpClient.h
+mrpcApplication.hpp
+../src/include/mrpcApplication.hpp
+muduo/net/EventLoop.h
+../src/include/muduo/net/EventLoop.h
+google/protobuf/message.h
+../src/include/google/protobuf/message.h
+
 ../src/include/mrpcConfig.hpp
 string
 -
@@ -85,6 +99,10 @@ requestHeader.pb.h
 /home/ziggy/repositories/mrpc/src/mrpcApplication.cpp
 mrpcApplication.hpp
 /home/ziggy/repositories/mrpc/src/mrpcApplication.hpp
+
+/home/ziggy/repositories/mrpc/src/mrpcChannel.cpp
+mrpcChannel.hpp
+/home/ziggy/repositories/mrpc/src/mrpcChannel.hpp
 
 /home/ziggy/repositories/mrpc/src/mrpcConfig.cpp
 mrpcConfig.hpp

@@ -7,6 +7,7 @@ class mrpcApplication
 
 private:
   mrpcConfig m_config;
+  bool _inited;
 
 private:
   mrpcApplication();
@@ -16,21 +17,36 @@ private:
 public:
   ~mrpcApplication();
 
-  std::string getConfigItem(std::string key)
+  bool isInit()
   {
 
-    return m_config.getConfigItem(key);
+    return _inited;
+  }
+
+  std::string getConfigItem(std::string key)
+  {
+    if (_inited)
+    {
+      return m_config.getConfigItem(key);
+    }
   }
 
   std::string getConfigInfoString()
   {
 
-    return m_config.getConfigInfoString();
+    if (_inited)
+    {
+      return m_config.getConfigInfoString();
+    }
   }
 
   std::string getConfigFilePath()
   {
-    return m_config.getConfigFilePath();
+
+    if (_inited)
+    {
+      return m_config.getConfigFilePath();
+    }
   }
 
   static mrpcApplication *getMrpcApplicationInstance();

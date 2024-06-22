@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/rpcCaller.dir/main.cpp.o CMakeFiles/rpcCaller.dir/__/protopb/example.pb.cc.o  -o ../../../bin/rpcCaller -lprotobuf ../../../lib/libmrpc.a -lmuduo_net -lmuduo_base -lpthread 
